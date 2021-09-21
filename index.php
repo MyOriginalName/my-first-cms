@@ -85,6 +85,7 @@ function viewArticle()
  */
 function homepage() 
 {
+echo "123";
     $results = array();
     $data = Article::getList(HOMEPAGE_NUM_ARTICLES);
     $results['articles'] = $data['results'];
