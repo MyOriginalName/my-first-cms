@@ -26,19 +26,14 @@
                     </span>
                 <?php } ?>
             </h2>
-            <p class="summary"><?php
-		//$arr = array();
-		//$str = $article->content;
-		//$arr = array_fill(0, 50, htmlspecialchars($str));
-		$srt = htmlspecialchars($article->content);
+	// Here
+            <p class="summary"> <?php
+		$str = htmlspecalchars($article->content);
 
-		echo  mb_strimwidth($srt, 0, 50);
-		echo '...';
-
-		// echo htmlspecialchars($article->content);
-?></p>
-            <img id="loader-identity" src="JS/ajax-loader.gif" alt="gif">
-            
+		echo mb_strcut($str, 0, 50);
+		echo "...";
+	    ?> </p>
+            <img id="loader-identity" src="JS/ajax-loader.gif" alt="gif">          
             <ul class="ajax-load">
                 <li><a href=".?action=viewArticle&amp;articleId=<?php echo $article->id?>" class="ajaxArticleBodyByPost" data-contentId="<?php echo $article->id?>">Показать продолжение (POST)</a></li>
                 <li><a href=".?action=viewArticle&amp;articleId=<?php echo $article->id?>" class="ajaxArticleBodyByGet" data-contentId="<?php echo $article->id?>">Показать продолжение (GET)</a></li>
